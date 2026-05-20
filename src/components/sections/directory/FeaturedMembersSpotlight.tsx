@@ -52,8 +52,11 @@ const FEATURED_MEMBERS = [
 
 export default function FeaturedMembersSpotlight() {
   return (
-    <section className="py-16 px-6 bg-navy border-b border-white/10">
-      <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center flex-wrap gap-4">
+    <section className="py-16 px-6 bg-gradient-to-br from-navy-deep via-navy to-navy-mid border-b border-white/10 relative overflow-hidden">
+      {/* Background ambient glow */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-brand/5 blur-[150px] rounded-full pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center flex-wrap gap-4 relative z-10">
         <div>
           <span className="text-brand text-xs uppercase tracking-[0.2em] font-semibold block mb-2">
             Spotlight
@@ -62,7 +65,7 @@ export default function FeaturedMembersSpotlight() {
             Featured Members
           </h2>
         </div>
-        <Button variant="ghost" size="sm" className="shrink-0">
+        <Button variant="ghost" size="sm" className="shrink-0 text-ivory hover:bg-white/5">
           View All &rarr;
         </Button>
       </div>
@@ -75,7 +78,7 @@ export default function FeaturedMembersSpotlight() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-navy-light border border-gold/30 rounded-3xl p-6 relative overflow-hidden group hover:border-gold/60 hover:shadow-[0_0_40px_rgba(201,168,76,0.1)] transition-all duration-300"
+            className="bg-gradient-to-br from-[#162a50] to-[#0f2044] border border-white/10 rounded-3xl p-6 relative overflow-hidden group hover:border-gold/40 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(201,168,76,0.15)] transition-all duration-300 z-10"
           >
             {member.featured && (
               <div className="absolute top-4 right-4 bg-yellow-900/40 border border-yellow-600/40 text-yellow-400 text-xs rounded-full px-3 py-1 flex items-center gap-1 z-10">

@@ -83,11 +83,15 @@ export default function DirectoryGridSection() {
   const currentMembers = filteredMembers.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
 
   return (
-    <section className="py-16 px-6 bg-navy">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 px-6 bg-gradient-to-b from-navy-deep to-navy relative overflow-hidden">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/3 left-0 w-[600px] h-[600px] bg-brand/5 blur-[150px] rounded-full pointer-events-none -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[#3158A7]/5 blur-[150px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* FILTER BAR */}
-        <div className="bg-navy-light border border-white/10 rounded-2xl p-4 flex flex-wrap gap-4 items-center mb-10">
+        <div className="bg-navy/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)] rounded-2xl p-4 flex flex-wrap gap-4 items-center mb-10">
           <div className="flex-1 min-w-[200px] relative">
             <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-ivory/30" />
             <input
@@ -103,7 +107,7 @@ export default function DirectoryGridSection() {
             <select
               value={industry}
               onChange={(e) => { setIndustry(e.target.value); setCurrentPage(1); }}
-              className="bg-navy border border-white/15 rounded-xl px-4 py-3 pr-10 text-ivory/70 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer"
+              className="bg-navy-deep/80 border border-white/10 hover:border-white/20 rounded-xl px-4 py-3 pr-10 text-ivory/80 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer transition-colors"
             >
               {INDUSTRIES.map(i => <option key={i} value={i}>{i}</option>)}
             </select>
@@ -114,7 +118,7 @@ export default function DirectoryGridSection() {
             <select
               value={location}
               onChange={(e) => { setLocation(e.target.value); setCurrentPage(1); }}
-              className="bg-navy border border-white/15 rounded-xl px-4 py-3 pr-10 text-ivory/70 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer"
+              className="bg-navy-deep/80 border border-white/10 hover:border-white/20 rounded-xl px-4 py-3 pr-10 text-ivory/80 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer transition-colors"
             >
               {LOCATIONS.map(l => <option key={l} value={l}>{l}</option>)}
             </select>
@@ -125,7 +129,7 @@ export default function DirectoryGridSection() {
             <select
               value={sort}
               onChange={(e) => { setSort(e.target.value); setCurrentPage(1); }}
-              className="bg-navy border border-white/15 rounded-xl px-4 py-3 pr-10 text-ivory/70 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer"
+              className="bg-navy-deep/80 border border-white/10 hover:border-white/20 rounded-xl px-4 py-3 pr-10 text-ivory/80 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer transition-colors"
             >
               <option value="Most Recent">Most Recent</option>
               <option value="Most Connected">Most Connected</option>
@@ -171,7 +175,7 @@ export default function DirectoryGridSection() {
             {currentMembers.map((member) => (
               <div 
                 key={member.id} 
-                className="bg-navy-light border border-white/10 rounded-2xl p-5 hover:border-brand/30 hover:shadow-[0_0_30px_rgba(238,103,13,0.08)] transition-all duration-300 group cursor-pointer"
+                className="bg-navy/40 backdrop-blur-md border border-white/10 rounded-2xl p-5 hover:bg-navy/60 hover:border-brand/40 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(212,86,26,0.12)] transition-all duration-300 group cursor-pointer"
               >
                 <div className="flex justify-between items-start">
                   <div
@@ -235,7 +239,7 @@ export default function DirectoryGridSection() {
             {currentMembers.map((member) => (
               <div 
                 key={member.id} 
-                className="bg-navy-light border border-white/10 rounded-xl p-4 flex items-center gap-5 hover:border-brand/30 transition-colors"
+                className="bg-navy/40 backdrop-blur-md border border-white/10 rounded-xl p-4 flex items-center gap-5 hover:bg-navy/60 hover:border-brand/40 hover:shadow-[0_8px_30px_rgba(212,86,26,0.1)] transition-all"
               >
                 <div
                   className="w-12 h-12 rounded-full border flex items-center justify-center font-display font-bold text-base shrink-0"

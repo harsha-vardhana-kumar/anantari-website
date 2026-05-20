@@ -49,7 +49,7 @@ export default function Navbar() {
     }
   }, [mobileOpen])
 
-  const isLightPage = pathname === '/services'
+  const isLightPage = pathname?.startsWith('/services')
 
   return (
     <>
@@ -71,15 +71,15 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-7" aria-label="Main navigation">
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href
+              const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'font-dm text-sm transition-colors relative pb-0.5',
+                    'font-dm text-sm transition-colors relative',
                     isActive
-                      ? 'text-ivory after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gold'
+                      ? 'text-gold after:absolute after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-gold'
                       : 'text-ivory/80 hover:text-ivory'
                   )}
                 >
@@ -124,27 +124,30 @@ export default function Navbar() {
             className="fixed inset-0 bg-navy z-40 flex flex-col px-6 pt-24 pb-10"
           >
             <nav aria-label="Mobile navigation" className="flex flex-col gap-2 flex-1">
-              {NAV_LINKS.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      'block font-cormorant text-3xl py-3 border-b border-white/10 transition-colors',
-                      pathname === link.href
-                        ? 'text-gold'
-                        : 'text-ivory/80 hover:text-ivory'
-                    )}
+              {NAV_LINKS.map((link, i) => {
+                const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        'block font-cormorant text-3xl py-3 border-b border-white/10 transition-colors',
+                        isActive
+                          ? 'text-gold'
+                          : 'text-ivory/80 hover:text-ivory'
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                )
+              })}
             </nav>
             <div className="mt-8 flex flex-col gap-3">
               <Button

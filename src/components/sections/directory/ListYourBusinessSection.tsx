@@ -31,8 +31,11 @@ export default function ListYourBusinessSection() {
   }
 
   return (
-    <section className="py-20 px-6 bg-navy-light border-t border-white/10">
-      <div className="max-w-5xl mx-auto bg-gradient-to-r from-[#3158A7]/20 via-navy to-brand/15 border border-white/10 rounded-3xl p-12 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="py-20 px-6 bg-gradient-to-br from-[#FBF9F6] via-[#F9F5EC] to-[#F2EBE1] border-y border-[#E8E1D3] relative overflow-hidden">
+      {/* Add a subtle ambient glow behind the box */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand/5 blur-[120px] rounded-full pointer-events-none" />
+      
+      <div className="max-w-5xl mx-auto bg-gradient-to-br from-navy to-navy-deep border border-navy-light/20 shadow-[0_20px_60px_rgba(13,31,60,0.15)] rounded-3xl p-12 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         
         {/* LEFT */}
         <div>
@@ -65,7 +68,7 @@ export default function ListYourBusinessSection() {
         </div>
 
         {/* RIGHT */}
-        <div className="bg-navy border border-white/15 rounded-2xl p-6">
+        <div className="bg-[#0f2044] border border-white/10 shadow-xl rounded-2xl p-6">
           <h3 className="text-ivory font-semibold mb-5 text-lg">Create Free Listing</h3>
           
           <div className="space-y-4">
@@ -76,7 +79,7 @@ export default function ListYourBusinessSection() {
                 placeholder="Your company name"
                 value={formData.businessName}
                 onChange={(e) => setFormData(f => ({ ...f, businessName: e.target.value }))}
-                className="w-full bg-navy-light border border-white/15 rounded-xl px-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50"
+                className="w-full bg-[#1a3560] border border-white/10 rounded-xl px-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50 transition-colors"
               />
             </div>
             
@@ -87,7 +90,7 @@ export default function ListYourBusinessSection() {
                 placeholder="Full name"
                 value={formData.name}
                 onChange={(e) => setFormData(f => ({ ...f, name: e.target.value }))}
-                className="w-full bg-navy-light border border-white/15 rounded-xl px-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50"
+                className="w-full bg-[#1a3560] border border-white/10 rounded-xl px-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50 transition-colors"
               />
             </div>
             
@@ -96,7 +99,7 @@ export default function ListYourBusinessSection() {
               <select
                 value={formData.industry}
                 onChange={(e) => setFormData(f => ({ ...f, industry: e.target.value }))}
-                className="w-full bg-navy-light border border-white/15 rounded-xl px-4 py-3 text-ivory/90 text-sm focus:outline-none focus:border-brand/50 appearance-none pointer-cursor"
+                className="w-full bg-[#1a3560] border border-white/10 rounded-xl px-4 py-3 text-ivory/90 text-sm focus:outline-none focus:border-brand/50 appearance-none cursor-pointer transition-colors"
               >
                 <option>Technology</option>
                 <option>Finance</option>
@@ -114,7 +117,7 @@ export default function ListYourBusinessSection() {
                 placeholder="hello@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData(f => ({ ...f, email: e.target.value }))}
-                className="w-full bg-navy-light border border-white/15 rounded-xl px-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50"
+                className="w-full bg-[#1a3560] border border-white/10 rounded-xl px-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50 transition-colors"
               />
             </div>
             
@@ -127,7 +130,7 @@ export default function ListYourBusinessSection() {
                   placeholder="00000 00000"
                   value={formData.phone}
                   onChange={(e) => setFormData(f => ({ ...f, phone: e.target.value }))}
-                  className="w-full bg-navy-light border border-white/15 rounded-xl pl-12 pr-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50"
+                  className="w-full bg-[#1a3560] border border-white/10 rounded-xl pl-12 pr-4 py-3 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/50 transition-colors"
                 />
               </div>
             </div>

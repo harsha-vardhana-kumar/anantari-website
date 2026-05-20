@@ -17,9 +17,9 @@ import type {
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '/' },
+  { label: 'Info', href: '/info' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Directory', href: '/directory' },
   { label: 'Events', href: '/events' },
   { label: 'Stories', href: '/stories' },
   { label: 'Membership', href: '/membership' },
@@ -98,7 +98,7 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
   Platform: [
-    { label: 'Member Directory', href: '/directory' },
+    { label: 'Member Directory', href: '/' },
     { label: 'Events', href: '/events' },
     { label: 'Stories', href: '/stories' },
     { label: 'Membership', href: '/membership' }
