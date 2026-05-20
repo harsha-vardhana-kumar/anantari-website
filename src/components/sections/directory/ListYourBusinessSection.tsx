@@ -31,11 +31,8 @@ export default function ListYourBusinessSection() {
   }
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-[#FBF9F6] via-[#F9F5EC] to-[#F2EBE1] border-y border-[#E8E1D3] relative overflow-hidden">
-      {/* Add a subtle ambient glow behind the box */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand/5 blur-[120px] rounded-full pointer-events-none" />
-      
-      <div className="max-w-5xl mx-auto bg-gradient-to-br from-navy to-navy-deep border border-navy-light/20 shadow-[0_20px_60px_rgba(13,31,60,0.15)] rounded-3xl p-12 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+    <section className="py-20 px-6 bg-ivory border-y border-navy/10 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto bg-navy border border-white/10 shadow-[0_20px_60px_rgba(13,31,60,0.15)] rounded-3xl p-12 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         
         {/* LEFT */}
         <div>

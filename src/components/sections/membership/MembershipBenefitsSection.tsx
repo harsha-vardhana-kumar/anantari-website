@@ -58,7 +58,7 @@ const colorMap = {
 
 export default function MembershipBenefitsSection() {
   return (
-    <section className="py-24 px-6 bg-navy-mid border-y border-white/10">
+    <section className="py-24 px-6 bg-ivory border-y border-navy/10">
       {/* Section header */}
       <div className="text-center mb-16">
         <motion.span
@@ -74,7 +74,7 @@ export default function MembershipBenefitsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-cormorant text-4xl md:text-5xl font-bold text-ivory"
+          className="font-cormorant text-4xl md:text-5xl font-bold text-navy-deep"
         >
           Benefits That Actually{' '}
           <span className="italic text-brand block">Move the Needle</span>
@@ -145,8 +145,8 @@ export default function MembershipBenefitsSection() {
                   <Icon size={20} className={colors.text} />
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-ivory">{benefit.title}</p>
-                  <p className="text-ivory/55 text-sm leading-relaxed mt-1">{benefit.description}</p>
+                  <p className="text-base font-semibold text-navy">{benefit.title}</p>
+                  <p className="text-navy/60 text-sm leading-relaxed mt-1">{benefit.description}</p>
                 </div>
               </motion.div>
             )

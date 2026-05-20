@@ -162,7 +162,7 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
     : ARTICLES.filter((a) => a.category === activeCategory)
 
   return (
-    <section className="py-16 px-6 bg-navy-light border-t border-white/10">
+    <section className="py-16 px-6 bg-ivory border-t border-navy/10">
       <div className="max-w-7xl mx-auto">
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -173,7 +173,7 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="bg-navy border border-white/10 rounded-3xl overflow-hidden group cursor-pointer transition-all duration-300"
+              className="bg-white border border-navy/[0.08] rounded-3xl overflow-hidden group cursor-pointer transition-all duration-300"
               style={{
                 borderColor: undefined
               }}
@@ -182,7 +182,7 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
                 e.currentTarget.style.boxShadow = '0 0 40px rgba(0,0,0,0.3)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
+                e.currentTarget.style.borderColor = 'rgba(0,0,0,0.08)'
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
@@ -204,8 +204,8 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
                     {article.category}
                   </span>
                   <div className="flex items-center gap-1 ml-auto">
-                    <Clock size={12} className="text-ivory/30" />
-                    <span className="text-xs text-ivory/30 ml-1">{article.readTime}</span>
+                    <Clock size={12} className="text-navy/30" />
+                    <span className="text-xs text-navy/30 ml-1">{article.readTime}</span>
                   </div>
                 </div>
 
@@ -219,26 +219,26 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
                 )}
 
                 {/* Title */}
-                <h3 className="font-cormorant text-lg font-bold text-ivory mt-3 leading-tight group-hover:text-brand transition-colors line-clamp-2">
+                <h3 className="font-cormorant text-lg font-bold text-navy mt-3 leading-tight group-hover:text-brand transition-colors line-clamp-2">
                   {article.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-ivory/55 text-sm leading-relaxed mt-3 line-clamp-3">
+                <p className="text-navy/60 text-sm leading-relaxed mt-3 line-clamp-3">
                   {article.excerpt}
                 </p>
 
                 {/* Tags */}
                 <div className="flex gap-2 flex-wrap mt-3">
                   {article.tags.slice(0, 2).map((tag) => (
-                    <span key={tag} className="bg-white/5 border border-white/10 text-ivory/40 text-xs rounded-full px-3 py-1">
+                    <span key={tag} className="bg-navy/5 border border-navy/10 text-navy/50 text-xs rounded-full px-3 py-1">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* Author + CTA row */}
-                <div className="mt-5 pt-5 border-t border-white/10 flex items-center justify-between gap-2">
+                <div className="mt-5 pt-5 border-t border-navy/10 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold font-cormorant flex-shrink-0"
@@ -246,9 +246,9 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
                     >
                       {article.author.initials}
                     </div>
-                    <span className="text-xs font-medium text-ivory/70 truncate">{article.author.name}</span>
-                    <span className="text-ivory/20 hidden sm:inline">·</span>
-                    <span className="text-xs text-ivory/30 hidden sm:inline flex-shrink-0">{article.date}</span>
+                    <span className="text-xs font-medium text-navy/70 truncate">{article.author.name}</span>
+                    <span className="text-navy/20 hidden sm:inline">·</span>
+                    <span className="text-xs text-navy/30 hidden sm:inline flex-shrink-0">{article.date}</span>
                   </div>
                   <button className="text-brand text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all flex-shrink-0">
                     Read <ArrowRight size={14} />
@@ -261,14 +261,14 @@ export default function StoriesGridSection({ activeCategory }: StoriesGridSectio
 
         {/* Empty state */}
         {filtered.length === 0 && (
-          <div className="text-center py-20 text-ivory/40">
+          <div className="text-center py-20 text-navy/40">
             No articles found in this category.
           </div>
         )}
 
         {/* Load more */}
         <div className="mt-12 text-center">
-          <p className="text-ivory/40 text-sm mb-6">
+          <p className="text-navy/40 text-sm mb-6">
             Showing {filtered.length} of 120+ stories
           </p>
           <Button variant="secondary" className="gap-2">

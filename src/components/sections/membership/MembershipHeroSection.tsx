@@ -12,9 +12,41 @@ export default function MembershipHeroSection() {
   return (
     <section className="min-h-[65vh] flex items-end pb-20 relative overflow-hidden bg-navy pt-32">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_-15%,rgba(238,103,13,0.2),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_10%_80%,rgba(49,88,167,0.2),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none" />
+
+      {/* Decorative SVG - Membership Motif (Network and Belonging) */}
+      <div
+        className="absolute inset-0 w-full h-full opacity-15 pointer-events-none z-0"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1200 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Network Nodes & Links */}
+          <g stroke="#ffffff" strokeWidth="0.5" opacity="0.6">
+            <line x1="200" y1="200" x2="350" y2="350" />
+            <line x1="350" y1="350" x2="600" y2="300" />
+            <line x1="600" y1="300" x2="850" y2="450" />
+            <line x1="850" y1="450" x2="1000" y2="300" />
+            <line x1="600" y1="300" x2="700" y2="150" />
+            <line x1="350" y1="350" x2="400" y2="550" />
+          </g>
+          
+          <circle cx="200" cy="200" r="15" stroke="#C9913A" strokeWidth="1" fill="none" />
+          <circle cx="350" cy="350" r="8" fill="#C9913A" />
+          <circle cx="600" cy="300" r="12" stroke="#ffffff" strokeWidth="1" fill="none" />
+          <circle cx="850" cy="450" r="8" fill="#C9913A" />
+          <circle cx="1000" cy="300" r="15" stroke="#C9913A" strokeWidth="1" fill="none" />
+          <circle cx="700" cy="150" r="6" fill="#ffffff" />
+          <circle cx="400" cy="550" r="6" fill="#ffffff" />
+          
+          {/* Large Concentric Belonging Ring */}
+          <circle cx="600" cy="300" r="450" stroke="#C9913A" strokeWidth="0.5" fill="none" strokeDasharray="4 12" />
+        </svg>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="text-center mx-auto max-w-3xl">

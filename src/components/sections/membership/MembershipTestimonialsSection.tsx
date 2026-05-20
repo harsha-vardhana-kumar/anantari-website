@@ -58,7 +58,7 @@ const planBadgeMap: Record<string, string> = {
 
 export default function MembershipTestimonialsSection() {
   return (
-    <section className="py-20 px-6 bg-navy-mid border-y border-white/10">
+    <section className="py-20 px-6 bg-ivory-dark border-y border-navy/10">
       {/* Header */}
       <div className="text-center mb-12">
         <motion.span
@@ -74,7 +74,7 @@ export default function MembershipTestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-cormorant text-4xl font-bold text-ivory"
+          className="font-cormorant text-4xl font-bold text-navy-deep"
         >
           Don&apos;t Take Our Word For It
         </motion.h2>
@@ -89,7 +89,7 @@ export default function MembershipTestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="bg-navy border border-white/10 rounded-3xl p-7 relative hover:border-brand/25 transition group"
+            className="bg-white border border-navy/[0.08] rounded-3xl p-7 relative hover:shadow-xl hover:border-gold/20 transition-all duration-300 group"
           >
             {/* Plan badge */}
             <span className={`absolute top-6 right-6 text-xs rounded-full px-3 py-1 border ${planBadgeMap[t.plan]}`}>
@@ -106,13 +106,13 @@ export default function MembershipTestimonialsSection() {
             {/* Quote */}
             <div className="relative">
               <span className="text-brand text-5xl font-bold leading-none block -mb-6 font-cormorant">&ldquo;</span>
-              <p className="font-cormorant text-base text-ivory/80 italic leading-relaxed pt-6">
+              <p className="font-cormorant text-base text-navy/80 italic leading-relaxed pt-6">
                 {t.quote}
               </p>
             </div>
 
             {/* Author */}
-            <div className="mt-5 pt-5 border-t border-white/10 flex items-center gap-3">
+            <div className="mt-5 pt-5 border-t border-navy/10 flex items-center gap-3">
               <div
                 className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold font-cormorant flex-shrink-0"
                 style={{ backgroundColor: `${t.color}20`, color: t.color }}
@@ -120,8 +120,8 @@ export default function MembershipTestimonialsSection() {
                 {t.initials}
               </div>
               <div>
-                <p className="font-semibold text-ivory text-sm">{t.name}</p>
-                <p className="text-xs text-ivory/50">{t.role}</p>
+                <p className="font-semibold text-navy text-sm">{t.name}</p>
+                <p className="text-xs text-navy/50">{t.role}</p>
               </div>
             </div>
           </motion.div>

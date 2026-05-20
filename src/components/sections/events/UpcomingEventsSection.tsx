@@ -121,9 +121,9 @@ export default function UpcomingEventsSection() {
   const [view, setView] = useState<'grid' | 'list'>('grid')
 
   return (
-    <section className="py-16 px-6 bg-navy">
+    <section className="py-16 px-6 bg-ivory-dark">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-ivory/40 text-xs uppercase tracking-widest mb-8">
+        <h2 className="text-navy/40 text-xs uppercase tracking-widest mb-8">
           Upcoming Events
         </h2>
 
@@ -135,7 +135,7 @@ export default function UpcomingEventsSection() {
               "w-10 h-10 border rounded-xl flex items-center justify-center transition-all",
               view === 'grid' 
                 ? "bg-brand/20 text-brand border-brand/40" 
-                : "text-ivory/40 border-white/10 hover:border-white/20"
+                : "text-navy/40 border-navy/10 hover:border-navy/20"
             )}
           >
             <LayoutGrid size={18} />
@@ -146,7 +146,7 @@ export default function UpcomingEventsSection() {
               "w-10 h-10 border rounded-xl flex items-center justify-center transition-all",
               view === 'list' 
                 ? "bg-brand/20 text-brand border-brand/40" 
-                : "text-ivory/40 border-white/10 hover:border-white/20"
+                : "text-navy/40 border-navy/10 hover:border-navy/20"
             )}
           >
             <List size={18} />
@@ -164,8 +164,8 @@ export default function UpcomingEventsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: (i % 3) * 0.1 }}
                 className={cn(
-                  "bg-navy-light border border-white/10 rounded-3xl overflow-hidden group hover:shadow-[0_0_40px_rgba(0,0,0,0.3)] transition-all duration-300 relative",
-                  "hover:border-opacity-40"
+                  "bg-white border border-navy/[0.08] rounded-3xl overflow-hidden group hover:shadow-xl hover:border-gold/20 transition-all duration-300 relative",
+                  ""
                 )}
                 style={{ hoverBorderColor: event.color } as any}
               >
@@ -189,7 +189,7 @@ export default function UpcomingEventsSection() {
                       <div className="font-display text-2xl font-bold leading-none" style={{ color: event.color }}>
                         {event.date.split(' ')[1]?.replace(',', '') || '15'}
                       </div>
-                      <div className="text-xs text-ivory/50 uppercase mt-1">
+                      <div className="text-xs text-navy/50 uppercase mt-1">
                         {event.date.split(' ')[0]?.substring(0, 3) || 'MAR'}
                       </div>
                     </div>
@@ -204,44 +204,44 @@ export default function UpcomingEventsSection() {
                       )}>
                         {event.format}
                       </span>
-                      <span className="bg-white/5 border border-white/10 text-ivory/50 text-xs rounded-full px-3 py-1">
+                      <span className="bg-navy/5 border border-navy/10 text-navy/60 text-xs rounded-full px-3 py-1">
                         {event.type}
                       </span>
                     </div>
                   </div>
 
-                  <h3 className="font-display text-lg font-bold text-ivory mt-4 leading-tight group-hover:text-brand transition-colors">
+                  <h3 className="font-display text-lg font-bold text-navy mt-4 leading-tight group-hover:text-brand transition-colors">
                     {event.title}
                   </h3>
 
                   <div className="flex items-center gap-2 mt-2">
-                    <Mic2 size={12} className="text-ivory/30 shrink-0" />
-                    <span className="text-ivory/50 text-xs line-clamp-1">{event.speaker}</span>
+                    <Mic2 size={12} className="text-navy/30 shrink-0" />
+                    <span className="text-navy/60 text-xs line-clamp-1">{event.speaker}</span>
                   </div>
 
                   <div className="flex items-center gap-2 mt-1">
                     <MapPin size={12} className="text-brand/60 shrink-0" />
-                    <span className="text-ivory/50 text-xs line-clamp-1">{event.location}</span>
+                    <span className="text-navy/60 text-xs line-clamp-1">{event.location}</span>
                   </div>
 
-                  <p className="text-ivory/50 text-sm leading-relaxed mt-3 line-clamp-2">
+                  <p className="text-navy/60 text-sm leading-relaxed mt-3 line-clamp-2">
                     {event.description}
                   </p>
 
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {event.tags.slice(0, 2).map(tag => (
-                      <span key={tag} className="bg-white/5 border border-white/10 text-ivory/50 text-xs rounded-full px-3 py-1">
+                      <span key={tag} className="bg-navy/5 border border-navy/10 text-navy/60 text-xs rounded-full px-3 py-1">
                         {tag}
                       </span>
                     ))}
                     {event.tags.length > 2 && (
-                      <span className="bg-white/5 border border-white/10 text-ivory/50 text-xs rounded-full px-3 py-1">
+                      <span className="bg-navy/5 border border-navy/10 text-navy/60 text-xs rounded-full px-3 py-1">
                         +{event.tags.length - 2} more
                       </span>
                     )}
                   </div>
 
-                  <div className="border-t border-white/10 mt-4 pt-4" />
+                  <div className="border-t border-navy/10 mt-4 pt-4" />
 
                   <div className="flex justify-between items-center">
                     <div>
@@ -259,7 +259,7 @@ export default function UpcomingEventsSection() {
                       ) : event.spotsLeft <= 50 ? (
                         <span className="text-yellow-400 text-xs">⚡ {event.spotsLeft} spots left</span>
                       ) : (
-                        <span className="text-ivory/40 text-xs">{event.spotsLeft} spots left</span>
+                        <span className="text-navy/40 text-xs">{event.spotsLeft} spots left</span>
                       )}
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export default function UpcomingEventsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-navy-light border border-white/10 rounded-2xl p-5 flex flex-col md:flex-row gap-6 items-start hover:border-brand/30 transition"
+                className="bg-white border border-navy/[0.08] rounded-2xl p-5 flex flex-col md:flex-row gap-6 items-start hover:border-brand/30 transition"
               >
                 <div 
                   className="min-w-[64px] border rounded-xl px-3 py-2 text-center"
@@ -295,14 +295,14 @@ export default function UpcomingEventsSection() {
                   <div className="font-display text-2xl font-bold leading-none" style={{ color: event.color }}>
                     {event.date.split(' ')[1]?.replace(',', '') || '15'}
                   </div>
-                  <div className="text-xs text-ivory/50 uppercase mt-1">
+                  <div className="text-xs text-navy/50 uppercase mt-1">
                     {event.date.split(' ')[0]?.substring(0, 3) || 'MAR'}
                   </div>
                 </div>
 
                 <div className="flex-1">
                   <div className="flex gap-3 items-center flex-wrap">
-                    <h3 className="font-display font-bold text-ivory text-lg">{event.title}</h3>
+                    <h3 className="font-display font-bold text-navy text-lg">{event.title}</h3>
                     <div className="flex gap-2">
                        <span className={cn(
                         "text-xs rounded-full px-2 py-0.5 border inline-block",
@@ -312,21 +312,21 @@ export default function UpcomingEventsSection() {
                       )}>
                         {event.format}
                       </span>
-                      <span className="bg-white/5 border border-white/10 text-ivory/50 text-xs rounded-full px-2 py-0.5 inline-block">
+                      <span className="bg-navy/5 border border-navy/10 text-navy/60 text-xs rounded-full px-2 py-0.5 inline-block">
                         {event.type}
                       </span>
                     </div>
                   </div>
                   
-                  <div className="text-xs text-ivory/50 mt-1">
+                  <div className="text-xs text-navy/60 mt-1">
                     {event.speaker} &middot; {event.location}
                   </div>
                   
-                  <p className="text-sm text-ivory/50 mt-1 line-clamp-1">{event.description}</p>
+                  <p className="text-sm text-navy/60 mt-1 line-clamp-1">{event.description}</p>
                   
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     {event.tags.map(tag => (
-                      <span key={tag} className="bg-white/5 border border-white/10 text-ivory/50 text-[10px] rounded-full px-2 py-0.5">
+                      <span key={tag} className="bg-navy/5 border border-navy/10 text-navy/60 text-[10px] rounded-full px-2 py-0.5">
                         {tag}
                       </span>
                     ))}
@@ -347,7 +347,7 @@ export default function UpcomingEventsSection() {
                     ) : event.spotsLeft <= 50 ? (
                       <span className="text-yellow-400 text-xs">⚡ {event.spotsLeft} spots left</span>
                     ) : (
-                      <span className="text-ivory/40 text-xs">{event.spotsLeft} spots left</span>
+                      <span className="text-navy/40 text-xs">{event.spotsLeft} spots left</span>
                     )}
                   </div>
                   <Button variant="primary" size="sm">

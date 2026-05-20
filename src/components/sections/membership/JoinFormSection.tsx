@@ -55,7 +55,7 @@ type FormData = {
 const STEP_LABELS = ['Personal', 'Business', 'Plan']
 
 const inputClass =
-  'w-full bg-navy border border-white/15 rounded-xl px-4 py-3.5 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/20 transition'
+  'w-full bg-ivory-dark border border-navy/20 rounded-xl px-4 py-3.5 text-navy text-sm placeholder:text-navy/30 focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/20 transition'
 
 export default function JoinFormSection() {
   const [step, setStep] = useState(1)
@@ -77,7 +77,7 @@ export default function JoinFormSection() {
 
   if (success) {
     return (
-      <section className="py-24 px-6 bg-navy">
+      <section className="py-24 px-6 bg-ivory">
         <div className="max-w-lg mx-auto text-center">
           <motion.div
             initial={{ scale: 0 }}
@@ -91,7 +91,7 @@ export default function JoinFormSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="font-cormorant text-3xl font-bold text-ivory mt-6"
+            className="font-cormorant text-3xl font-bold text-navy-deep mt-6"
           >
             Welcome to Anantari! 🎉
           </motion.h2>
@@ -99,7 +99,7 @@ export default function JoinFormSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-ivory/60 text-base mt-3"
+            className="text-navy/60 text-base mt-3"
           >
             Check your email at <span className="text-brand">{formData.email || 'your inbox'}</span> for your
             login details and onboarding guide.
@@ -121,7 +121,7 @@ export default function JoinFormSection() {
   }
 
   return (
-    <section className="py-24 px-6 bg-navy">
+    <section className="py-24 px-6 bg-ivory-dark">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -138,7 +138,7 @@ export default function JoinFormSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-cormorant text-4xl font-bold text-ivory"
+            className="font-cormorant text-4xl font-bold text-navy-deep"
           >
             Join Anantari Today
           </motion.h2>
@@ -147,7 +147,7 @@ export default function JoinFormSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="flex flex-wrap items-center justify-center gap-2 mt-3 text-ivory/50 text-sm"
+            className="flex flex-wrap items-center justify-center gap-2 mt-3 text-navy/50 text-sm"
           >
             <CheckCircle2 size={14} className="text-green-400 flex-shrink-0" />
             7-day free trial
@@ -174,15 +174,15 @@ export default function JoinFormSection() {
                         ? 'bg-brand/20 text-brand border border-brand'
                         : isActive
                         ? 'bg-brand text-white'
-                        : 'bg-navy-mid border border-white/15 text-ivory/30'
+                        : 'bg-ivory-dark border border-navy/20 text-navy/40'
                     )}
                   >
                     {isCompleted ? <Check size={14} /> : s}
                   </div>
-                  <span className="text-xs text-ivory/40 mt-1">{label}</span>
+                  <span className="text-xs text-navy/40 mt-1">{label}</span>
                 </div>
                 {i < STEP_LABELS.length - 1 && (
-                  <div className={cn('flex-1 h-px mx-2 mb-5 transition-colors', step > s ? 'bg-brand/40' : 'bg-white/10')} />
+                  <div className={cn('flex-1 h-px mx-2 mb-5 transition-colors', step > s ? 'bg-brand/40' : 'bg-navy/10')} />
                 )}
               </div>
             )
@@ -197,35 +197,35 @@ export default function JoinFormSection() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="bg-navy-mid border border-white/10 rounded-3xl p-8"
+              className="bg-white border border-navy/[0.08] rounded-3xl p-8 shadow-sm"
             >
-              <h3 className="font-cormorant text-xl font-bold text-ivory mb-6">Tell us about yourself</h3>
+              <h3 className="font-cormorant text-xl font-bold text-navy-deep mb-6">Tell us about yourself</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">First Name *</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">First Name *</label>
                   <input className={inputClass} placeholder="Priya" value={formData.firstName} onChange={update('firstName')} />
                 </div>
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Last Name *</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Last Name *</label>
                   <input className={inputClass} placeholder="Sharma" value={formData.lastName} onChange={update('lastName')} />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Email Address *</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Email Address *</label>
                   <input type="email" className={inputClass} placeholder="priya@example.com" value={formData.email} onChange={update('email')} />
                 </div>
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Phone Number</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Phone Number</label>
                   <div className="flex gap-2">
-                    <span className="bg-navy border border-white/15 rounded-xl px-3 py-3.5 text-ivory/60 text-sm flex-shrink-0">+91</span>
+                    <span className="bg-ivory-dark border border-navy/20 rounded-xl px-3 py-3.5 text-navy/60 text-sm flex-shrink-0">+91</span>
                     <input className={inputClass} placeholder="98765 43210" value={formData.phone} onChange={update('phone')} />
                   </div>
                 </div>
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">City</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">City</label>
                   <input className={inputClass} placeholder="Hyderabad" value={formData.city} onChange={update('city')} />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Country</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Country</label>
                   <select className={inputClass} value={formData.country} onChange={update('country')}>
                     {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
                   </select>
@@ -244,34 +244,34 @@ export default function JoinFormSection() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="bg-navy-mid border border-white/10 rounded-3xl p-8"
+              className="bg-white border border-navy/[0.08] rounded-3xl p-8 shadow-sm"
             >
-              <h3 className="font-cormorant text-xl font-bold text-ivory mb-6">Your Business / Career</h3>
+              <h3 className="font-cormorant text-xl font-bold text-navy-deep mb-6">Your Business / Career</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Profession / Role</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Profession / Role</label>
                   <input className={inputClass} placeholder="Founder & CEO" value={formData.profession} onChange={update('profession')} />
                 </div>
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Organisation / Company</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Organisation / Company</label>
                   <input className={inputClass} placeholder="Your Company" value={formData.organization} onChange={update('organization')} />
                 </div>
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Industry</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Industry</label>
                   <select className={inputClass} value={formData.industry} onChange={update('industry')}>
                     <option value="">Select industry</option>
                     {INDUSTRIES.map((i) => <option key={i} value={i}>{i}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Years of Experience</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Years of Experience</label>
                   <select className={inputClass} value={formData.experience} onChange={update('experience')}>
                     <option value="">Select</option>
                     {EXPERIENCE_OPTIONS.map((e) => <option key={e} value={e}>{e}</option>)}
                   </select>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Brief Bio</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">Brief Bio</label>
                   <textarea
                     className={`${inputClass} resize-none`}
                     rows={4}
@@ -280,10 +280,10 @@ export default function JoinFormSection() {
                     value={formData.bio}
                     onChange={update('bio')}
                   />
-                  <p className="text-ivory/30 text-xs text-right mt-1">{formData.bio.length}/200</p>
+                  <p className="text-navy/30 text-xs text-right mt-1">{formData.bio.length}/200</p>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="text-ivory/60 text-xs font-medium mb-1.5 block">How did you hear about us?</label>
+                  <label className="text-navy/60 text-xs font-medium mb-1.5 block">How did you hear about us?</label>
                   <select className={inputClass} value={formData.heardAbout} onChange={update('heardAbout')}>
                     <option value="">Select</option>
                     {HEAR_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
@@ -306,9 +306,9 @@ export default function JoinFormSection() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="bg-navy-mid border border-white/10 rounded-3xl p-8"
+              className="bg-white border border-navy/[0.08] rounded-3xl p-8 shadow-sm"
             >
-              <h3 className="font-cormorant text-xl font-bold text-ivory mb-6">Choose Your Membership</h3>
+              <h3 className="font-cormorant text-xl font-bold text-navy-deep mb-6">Choose Your Membership</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {PLANS.map((plan) => (
@@ -319,7 +319,7 @@ export default function JoinFormSection() {
                       'cursor-pointer border rounded-2xl p-5 transition-all duration-200 relative',
                       selectedPlan === plan.name
                         ? 'border-brand bg-brand/5 shadow-[0_0_20px_rgba(238,103,13,0.15)]'
-                        : 'bg-navy border-white/10 hover:border-white/25'
+                        : 'bg-ivory-dark border-navy/10 hover:border-navy/25'
                     )}
                   >
                     {plan.popular && (
@@ -328,11 +328,11 @@ export default function JoinFormSection() {
                       </div>
                     )}
                     <div className="flex items-center justify-between">
-                      <p className="font-cormorant font-bold text-ivory">{plan.name}</p>
+                      <p className="font-cormorant font-bold text-navy">{plan.name}</p>
                       <div
                         className={cn(
                           'w-5 h-5 rounded-full border flex items-center justify-center transition-all',
-                          selectedPlan === plan.name ? 'bg-brand border-brand' : 'border-white/20'
+                          selectedPlan === plan.name ? 'bg-brand border-brand' : 'border-navy/20'
                         )}
                       >
                         {selectedPlan === plan.name && <div className="w-2 h-2 rounded-full bg-white" />}
@@ -340,11 +340,11 @@ export default function JoinFormSection() {
                     </div>
                     <p className="font-cormorant text-3xl font-bold mt-3" style={{ color: plan.color }}>
                       {plan.price}
-                      <span className="text-ivory/40 text-xs font-sans">/month</span>
+                      <span className="text-navy/40 text-xs font-sans">/month</span>
                     </p>
                     <ul className="space-y-1.5 mt-4">
                       {plan.features.map((f) => (
-                        <li key={f} className="text-xs text-ivory/50 flex items-center gap-1.5">
+                        <li key={f} className="text-xs text-navy/60 flex items-center gap-1.5">
                           <span style={{ color: plan.color }}>✓</span> {f}
                         </li>
                       ))}
@@ -367,12 +367,12 @@ export default function JoinFormSection() {
                   onClick={() => setAgreed((v) => !v)}
                   className={cn(
                     'w-5 h-5 border rounded cursor-pointer flex items-center justify-center flex-shrink-0 mt-0.5 transition-all',
-                    agreed ? 'bg-brand border-brand' : 'border-white/30'
+                    agreed ? 'bg-brand border-brand' : 'border-navy/30'
                   )}
                 >
                   {agreed && <Check size={12} className="text-white" />}
                 </div>
-                <p className="text-ivory/50 text-sm">
+                <p className="text-navy/60 text-sm">
                   I agree to Anantari&apos;s Terms of Service and Privacy Policy. I am 18+ years old.
                 </p>
               </div>

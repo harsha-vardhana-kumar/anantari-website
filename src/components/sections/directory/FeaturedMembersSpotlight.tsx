@@ -52,20 +52,20 @@ const FEATURED_MEMBERS = [
 
 export default function FeaturedMembersSpotlight() {
   return (
-    <section className="py-16 px-6 bg-gradient-to-br from-navy-deep via-navy to-navy-mid border-b border-white/10 relative overflow-hidden">
-      {/* Background ambient glow */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-brand/5 blur-[150px] rounded-full pointer-events-none" />
+    <section className="py-16 px-6 bg-ivory-dark border-b border-navy/10 relative overflow-hidden">
+      {/* Subtle background accent */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gold/5 blur-[200px] rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center flex-wrap gap-4 relative z-10">
         <div>
           <span className="text-brand text-xs uppercase tracking-[0.2em] font-semibold block mb-2">
             Spotlight
           </span>
-          <h2 className="font-display text-2xl font-bold text-ivory">
+          <h2 className="font-cormorant text-2xl font-bold text-navy">
             Featured Members
           </h2>
         </div>
-        <Button variant="ghost" size="sm" className="shrink-0 text-ivory hover:bg-white/5">
+        <Button variant="ghost" size="sm" className="shrink-0 text-navy/60 hover:text-navy hover:bg-navy/5">
           View All &rarr;
         </Button>
       </div>

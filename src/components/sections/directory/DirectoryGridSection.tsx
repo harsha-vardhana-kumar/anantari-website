@@ -83,10 +83,8 @@ export default function DirectoryGridSection() {
   const currentMembers = filteredMembers.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
 
   return (
-    <section className="py-16 px-6 bg-gradient-to-b from-navy-deep to-navy relative overflow-hidden">
+    <section className="py-16 px-6 bg-navy relative overflow-hidden">
       {/* Background ambient glow */}
-      <div className="absolute top-1/3 left-0 w-[600px] h-[600px] bg-brand/5 blur-[150px] rounded-full pointer-events-none -translate-x-1/2" />
-      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[#3158A7]/5 blur-[150px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         

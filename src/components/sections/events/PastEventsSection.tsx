@@ -15,15 +15,15 @@ const PAST_EVENTS = [
 
 export default function PastEventsSection() {
   return (
-    <section className="py-16 px-6 bg-navy-light border-t border-white/10 overflow-hidden">
+    <section className="py-16 px-6 bg-ivory border-t border-navy/10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         <div className="flex justify-between items-center mb-10 gap-4 flex-wrap">
           <div>
-            <span className="text-ivory/40 text-xs uppercase tracking-widest block mb-2">
+            <span className="text-navy/40 text-xs uppercase tracking-widest block mb-2">
               Past Events
             </span>
-            <h2 className="font-display text-2xl font-bold text-ivory">
+            <h2 className="font-display text-2xl font-bold text-navy-deep">
               Moments We&apos;ve Shared
             </h2>
           </div>

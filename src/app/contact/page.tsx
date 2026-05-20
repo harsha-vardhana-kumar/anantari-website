@@ -51,13 +51,13 @@ const SUBJECTS = [
 ]
 
 const colorIconMap = {
-  orange: { bg: 'bg-brand/15', text: 'text-brand', border: 'border-brand/30' },
-  blue: { bg: 'bg-[#3158A7]/15', text: 'text-[#3158A7]', border: 'border-[#3158A7]/30' },
-  gold: { bg: 'bg-gold/15', text: 'text-gold', border: 'border-gold/30' }
+  orange: { bg: 'bg-brand/10', text: 'text-brand', border: 'border-brand/20' },
+  blue: { bg: 'bg-[#3158A7]/10', text: 'text-[#3158A7]', border: 'border-[#3158A7]/20' },
+  gold: { bg: 'bg-gold/10', text: 'text-gold', border: 'border-gold/20' }
 }
 
 const inputClass =
-  'w-full bg-navy border border-white/15 rounded-xl px-4 py-3.5 text-ivory text-sm placeholder:text-ivory/25 focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/20 transition'
+  'w-full bg-ivory-dark border border-navy/20 rounded-xl px-4 py-3.5 text-navy text-sm placeholder:text-navy/30 focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/20 transition'
 
 export default function ContactPage() {
   const [name, setName] = useState('')
@@ -72,15 +72,42 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-navy">
-      {/* Hero */}
-      <section className="py-24 px-6 text-center relative overflow-hidden pt-40">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_0%,rgba(49,88,167,0.2),transparent)] pointer-events-none" />
+    <main className="min-h-screen bg-ivory">
+      {/* Hero — dark navy */}
+      <section className="bg-navy py-24 px-6 text-center relative overflow-hidden pt-40">
+        
+        {/* Decorative SVG - Contact Motif (Communication Signals / Waves) */}
+        <div
+          className="absolute inset-0 w-full h-full opacity-15 pointer-events-none z-0"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 1200 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            {/* Origin Point */}
+            <circle cx="100" cy="500" r="10" stroke="#C9913A" strokeWidth="2" fill="none" />
+            <circle cx="100" cy="500" r="4" fill="#ffffff" />
+            
+            {/* Radiating communication waves */}
+            <path d="M250 500 A 150 150 0 0 0 100 350" stroke="#C9913A" strokeWidth="1" fill="none" />
+            <path d="M450 500 A 350 350 0 0 0 100 150" stroke="#ffffff" strokeWidth="0.5" fill="none" strokeDasharray="6 12" />
+            <path d="M700 500 A 600 600 0 0 0 100 -100" stroke="#C9913A" strokeWidth="0.5" fill="none" />
+            
+            {/* Incoming signals */}
+            <path d="M1200 100 Q800 300 400 600" stroke="#ffffff" strokeWidth="0.5" fill="none" opacity="0.3" />
+            <path d="M1300 200 Q900 400 500 700" stroke="#C9913A" strokeWidth="0.5" fill="none" strokeDasharray="2 10" />
+          </svg>
+        </div>
+
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 border border-brand bg-brand/10 text-brand rounded-full px-5 py-2 text-sm mb-6"
+            className="inline-block rounded-full border border-gold/30 bg-gold/10 text-gold text-xs font-dm px-4 py-1.5 tracking-widest uppercase mb-6"
           >
             Get In Touch
           </motion.div>
@@ -97,14 +124,14 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="text-ivory/60 text-xl mt-5 max-w-xl mx-auto"
+            className="text-muted text-xl mt-5 max-w-xl mx-auto"
           >
             Whether you have a question, a partnership idea, or just want to say hello — we&apos;re here.
           </motion.p>
         </div>
       </section>
 
-      {/* Content */}
+      {/* Content — light ivory */}
       <section className="py-16 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* LEFT — contact info */}
@@ -120,14 +147,14 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.08 }}
-                    className="bg-navy-mid border border-white/10 rounded-2xl p-5 flex gap-4 items-start"
+                    className="bg-white border border-navy/[0.08] rounded-2xl p-5 flex gap-4 items-start shadow-sm hover:shadow-md hover:border-gold/20 transition-all duration-300"
                   >
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 border ${colors.bg} ${colors.border}`}>
                       <Icon size={18} className={colors.text} />
                     </div>
                     <div>
-                      <p className="text-ivory/40 text-xs uppercase tracking-widest">{item.label}</p>
-                      <p className="text-ivory text-sm mt-0.5 leading-relaxed whitespace-pre-line">{item.value}</p>
+                      <p className="text-navy/40 text-xs uppercase tracking-widest">{item.label}</p>
+                      <p className="text-navy text-sm mt-0.5 leading-relaxed whitespace-pre-line">{item.value}</p>
                       {item.action && (
                         <button className="text-brand text-sm mt-1 hover:underline">{item.action}</button>
                       )}
@@ -144,14 +171,14 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="mt-6"
             >
-              <p className="text-ivory/30 text-xs uppercase tracking-widest mb-3">Follow our journey</p>
+              <p className="text-navy/40 text-xs uppercase tracking-widest mb-3">Follow our journey</p>
               <div className="flex items-center gap-3 flex-wrap">
                 {SOCIAL_ICONS.map(({ Icon, label }) => (
                   <a
                     key={label}
                     href="#"
                     aria-label={label}
-                    className="w-10 h-10 rounded-full border border-white/20 text-ivory flex items-center justify-center hover:bg-white/10 hover:border-brand/40 transition-all duration-200"
+                    className="w-10 h-10 rounded-full border border-navy/15 text-navy/60 flex items-center justify-center hover:bg-navy/5 hover:border-gold/40 hover:text-navy transition-all duration-200"
                   >
                     <Icon size={16} />
                   </a>
@@ -167,17 +194,17 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="lg:col-span-3"
           >
-            <div className="bg-navy-mid border border-white/10 rounded-3xl p-8">
-              <h2 className="font-cormorant text-2xl font-bold text-ivory mb-6">Send Us a Message</h2>
+            <div className="bg-white border border-navy/[0.08] rounded-3xl p-8 shadow-sm">
+              <h2 className="font-cormorant text-2xl font-bold text-navy mb-6">Send Us a Message</h2>
 
               {sent ? (
-                <div className="bg-green-900/20 border border-green-700/30 rounded-xl p-5 text-center">
-                  <p className="text-green-300 text-base font-medium">Message Sent! We&apos;ll reply within 24 hours ✓</p>
+                <div className="bg-green-50 border border-green-200 rounded-xl p-5 text-center">
+                  <p className="text-green-700 text-base font-medium">Message Sent! We&apos;ll reply within 24 hours ✓</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Your Name</label>
+                    <label className="text-navy/60 text-xs font-medium mb-1.5 block">Your Name</label>
                     <input
                       className={inputClass}
                       placeholder="Priya Sharma"
@@ -187,7 +214,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Email Address</label>
+                    <label className="text-navy/60 text-xs font-medium mb-1.5 block">Email Address</label>
                     <input
                       type="email"
                       className={inputClass}
@@ -198,7 +225,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Subject</label>
+                    <label className="text-navy/60 text-xs font-medium mb-1.5 block">Subject</label>
                     <select
                       className={inputClass}
                       value={subject}
@@ -210,7 +237,7 @@ export default function ContactPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="text-ivory/60 text-xs font-medium mb-1.5 block">Message</label>
+                    <label className="text-navy/60 text-xs font-medium mb-1.5 block">Message</label>
                     <textarea
                       className={`${inputClass} resize-none`}
                       rows={6}
@@ -222,7 +249,7 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="button"
-                    className="text-ivory/40 text-xs hover:text-ivory/70 cursor-pointer transition-colors"
+                    className="text-navy/40 text-xs hover:text-navy/70 cursor-pointer transition-colors"
                   >
                     📎 Add attachment
                   </button>
@@ -233,7 +260,7 @@ export default function ContactPage() {
                 </form>
               )}
 
-              <p className="text-ivory/30 text-xs text-center mt-4">
+              <p className="text-navy/30 text-xs text-center mt-4">
                 We respond to all messages within 24 business hours.
               </p>
             </div>
@@ -243,3 +270,4 @@ export default function ContactPage() {
     </main>
   )
 }
+

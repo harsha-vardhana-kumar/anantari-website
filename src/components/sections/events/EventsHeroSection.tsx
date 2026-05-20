@@ -14,9 +14,34 @@ export default function EventsHeroSection() {
   return (
     <section className="min-h-[60vh] flex items-end pb-20 relative overflow-hidden bg-navy pt-32">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_30%_0%,rgba(238,103,13,0.25),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_80%_80%,rgba(49,88,167,0.2),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none" />
+      {/* Decorative SVG - Events Motif (Orbiting connections) */}
+      <div
+        className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-0"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1200 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Main orbit path */}
+          <ellipse cx="600" cy="400" rx="500" ry="250" stroke="#C9913A" strokeWidth="1" fill="none" strokeDasharray="8 12" />
+          {/* Crossing orbit path */}
+          <ellipse cx="600" cy="400" rx="300" ry="400" stroke="#ffffff" strokeWidth="0.5" fill="none" />
+          {/* Trajectory path */}
+          <path d="M-100 600 Q600 200 1300 700" stroke="#C9913A" strokeWidth="0.5" fill="none" />
+          
+          {/* Nodes / Event Points */}
+          <circle cx="100" cy="400" r="4" fill="#C9913A" />
+          <circle cx="1100" cy="400" r="4" fill="#ffffff" />
+          <circle cx="600" cy="150" r="3" fill="#C9913A" />
+          <circle cx="600" cy="650" r="3" fill="#C9913A" />
+          <circle cx="350" cy="280" r="6" stroke="#C9913A" strokeWidth="1.5" fill="none" />
+          <circle cx="850" cy="520" r="6" stroke="#ffffff" strokeWidth="1.5" fill="none" />
+        </svg>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col justify-end h-full">

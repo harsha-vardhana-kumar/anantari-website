@@ -19,15 +19,6 @@ export default function SearchHero() {
   return (
     <section className="relative bg-navy min-h-[75vh] pt-36 pb-20 overflow-hidden flex items-center">
       {/* Background image */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1400&q=80"
-          alt=""
-          fill
-          className="object-cover opacity-[0.08]"
-          priority
-        />
-      </div>
 
       {/* Decorative SVG */}
       <div

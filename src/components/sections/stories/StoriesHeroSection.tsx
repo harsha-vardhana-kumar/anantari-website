@@ -22,9 +22,29 @@ export default function StoriesHeroSection({
   return (
     <section className="min-h-[55vh] flex items-end pb-20 relative overflow-hidden bg-navy pt-32">
       {/* Background layers */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-10%,rgba(201,168,76,0.25),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_90%_90%,rgba(49,88,167,0.2),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 pointer-events-none" />
+      {/* Decorative SVG - Stories Motif (Narrative flow / Pages) */}
+      <div
+        className="absolute inset-0 w-full h-full opacity-15 pointer-events-none z-0"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1200 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          {/* Cascading editorial curves (like turning pages or story arcs) */}
+          <path d="M-100 800 Q300 400 1300 100" stroke="#C9913A" strokeWidth="0.5" fill="none" />
+          <path d="M-100 850 Q400 450 1300 150" stroke="#ffffff" strokeWidth="1" fill="none" />
+          <path d="M-100 900 Q500 500 1300 200" stroke="#C9913A" strokeWidth="0.5" fill="none" strokeDasharray="4 8" />
+          <path d="M-100 950 Q600 550 1300 250" stroke="#ffffff" strokeWidth="0.5" fill="none" opacity="0.5" />
+          
+          {/* Subtle structure lines (like editorial grids) */}
+          <line x1="300" y1="0" x2="300" y2="800" stroke="#ffffff" strokeWidth="0.5" strokeDasharray="2 10" opacity="0.5" />
+          <line x1="900" y1="0" x2="900" y2="800" stroke="#C9913A" strokeWidth="0.5" strokeDasharray="2 10" opacity="0.5" />
+        </svg>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">

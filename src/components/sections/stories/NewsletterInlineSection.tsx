@@ -11,12 +11,9 @@ export default function NewsletterInlineSection() {
   const [email, setEmail] = useState('')
 
   return (
-    <section className="py-20 px-6 bg-navy border-t border-white/10">
+    <section className="py-20 px-6 bg-navy-deep border-t border-white/5">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-gold/10 via-navy-mid to-[#3158A7]/10 border border-white/10 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
-          {/* Decorative orbs */}
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-[#3158A7]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-navy-mid border border-white/10 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
 
           {/* Content */}
           <div className="relative z-10">

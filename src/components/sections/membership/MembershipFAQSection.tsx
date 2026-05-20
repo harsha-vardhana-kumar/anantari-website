@@ -36,7 +36,7 @@ export default function MembershipFAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null)
 
   return (
-    <section className="py-20 px-6 bg-navy-mid border-t border-white/10">
+    <section className="py-20 px-6 bg-ivory border-t border-navy/10">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -53,7 +53,7 @@ export default function MembershipFAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-cormorant text-4xl font-bold text-ivory"
+            className="font-cormorant text-4xl font-bold text-navy-deep"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -68,17 +68,17 @@ export default function MembershipFAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-navy border border-white/10 rounded-2xl overflow-hidden"
+              className="bg-white border border-navy/[0.08] rounded-2xl overflow-hidden shadow-sm"
             >
               <button
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
               >
-                <span className="font-cormorant font-semibold text-ivory text-base pr-4">{faq.q}</span>
+                <span className="font-cormorant font-semibold text-navy text-base pr-4">{faq.q}</span>
                 <ChevronDown
                   size={18}
                   className={cn(
-                    'flex-shrink-0 text-ivory/40 transition-transform duration-300',
+                    'flex-shrink-0 text-navy/40 transition-transform duration-300',
                     openIdx === idx ? 'rotate-180' : ''
                   )}
                 />
@@ -92,7 +92,7 @@ export default function MembershipFAQSection() {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-6 pb-5 text-ivory/60 text-sm leading-relaxed">{faq.a}</p>
+                    <p className="px-6 pb-5 text-navy/60 text-sm leading-relaxed">{faq.a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
